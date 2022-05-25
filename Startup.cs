@@ -30,6 +30,7 @@ namespace BookEshopAPI
             services.AddSingleton<IBookEshopDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BookEshopDatabaseSettings>>().Value);
             services.AddSingleton<BookService>();
+            services.AddSingleton<BookStoreService>();
             services.AddControllers();
         }
 
