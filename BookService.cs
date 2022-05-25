@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookStoreAPI
+namespace BookEshopAPI
 {
 
     // <snippet_BookServiceConstructor>
@@ -13,7 +13,7 @@ namespace BookStoreAPI
         private readonly IMongoCollection<Book> _books;
 
         // <snippet_BookServiceConstructor>
-        public BookService(IBookstoreDatabaseSettings settings)
+        public BookService(IBookEshopDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);

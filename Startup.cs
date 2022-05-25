@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookStoreAPI
+namespace BookEshopAPI
 {
     public class Startup
     {
@@ -25,10 +25,10 @@ namespace BookStoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<BookstoreDatabaseSettings>(
-                Configuration.GetSection(nameof(BookstoreDatabaseSettings)));
-            services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
+            services.Configure<BookEshopDatabaseSettings>(
+                Configuration.GetSection(nameof(BookEshopDatabaseSettings)));
+            services.AddSingleton<IBookEshopDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<BookEshopDatabaseSettings>>().Value);
             services.AddSingleton<BookService>();
             services.AddControllers();
         }
